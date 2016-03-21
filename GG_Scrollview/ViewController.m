@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-
+#import "ScrollViewggg.h"
 @interface ViewController ()
 
 @end
@@ -17,6 +17,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    NSMutableArray *array = [[NSMutableArray alloc]initWithCapacity:10];
+    for (int i =1 ; i<11; i++) {
+        [array addObject:[NSString stringWithFormat:@"%d",i]];
+    }
+    
+    ScrollViewggg *scrollView = [[ScrollViewggg alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 200) WithLoadImages:array];
+    scrollView.AutoScrollDelay = 3;
+    scrollView.backgroundColor = [UIColor grayColor];
+    [self.view addSubview:scrollView];
 }
 
 - (void)didReceiveMemoryWarning {
